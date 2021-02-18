@@ -3,7 +3,7 @@ import Person from "./Person";
 const People = ({ nextId, people, addPerson, removePerson }) => {
   const person = {
     id: nextId,
-    name: "TestPerson " + String(Math.random()),
+    name: "TestPerson",
     img: "https://unsplash.com/photos/_9a-3NO5KJE/download?w=320",
     alt: "Mr or Miss Panda!",
     displayPhoto: true,

@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Lorem from "./Lorem";
 import People from "./People";
+import AddPerson from "./AddPerson";
 
 class App extends React.Component {
   constructor(props) {
@@ -80,19 +81,19 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        <h1>App</h1>
         {this.state.showHeader ? (
           <header>
             <img src="https://futurecollars.com/wp-content/uploads/2019/09/logo.svg" />
           </header>
         ) : null}
         <button onClick={this.toggleHeader}>Toggle Header</button>
+
         <h1>EUR: {this.state.dataFromNBP.currencies.eur}</h1>
-        <People
-          nextId={this.state.nextId}
-          people={this.state.people}
-          addPerson={this.addPerson}
-          removePerson={this.removePerson}
-        />
+
+        <People people={this.state.people} removePerson={this.removePerson} />
+
+        <AddPerson nextId={this.state.nextId} addPerson={this.addPerson} />
 
         <div>{this.state.textFromInputField}</div>
         <Lorem

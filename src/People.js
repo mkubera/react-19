@@ -1,20 +1,13 @@
 import Person from "./Person";
 
-const People = ({ nextId, people, addPerson, removePerson }) => {
-  const person = {
-    id: nextId,
-    name: "TestPerson",
-    img: "https://unsplash.com/photos/_9a-3NO5KJE/download?w=320",
-    alt: "Mr or Miss Panda!",
-    displayPhoto: true,
-  };
+const People = ({ people, removePerson }) => {
   return (
     <>
       <ul>
         {people.map(({ id, name, img, alt, displayPhoto }) => (
           <>
             <Person
-              key={id}
+              key={id.toString()}
               id={id}
               name={name}
               img={img}
@@ -25,7 +18,6 @@ const People = ({ nextId, people, addPerson, removePerson }) => {
           </>
         ))}
       </ul>
-      <button onClick={() => addPerson(person)}>Add Person</button>
     </>
   );
 };
